@@ -1,6 +1,6 @@
 {
     "name": "rxjslog",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Log RxJS events nicely to the console",
     "main": "index.js",
     "scripts": {

@@ -2,7 +2,11 @@
 
 Log RxJS events nicely to the console.
 
-RxJSLog works in both the browser as in Node.js environments.
+The `next`, `error` and `complete` events have their own icon and
+the log messages have their own color so they stand out between
+the other log messages.
+
+Rxjslog works in both the browser as in Node.js environments.
 
 ## Install
 
@@ -27,7 +31,7 @@ myObservable.pipe(log("myObservable"))
 
 ## Example output
 
-![Example output of RxJSLog](https://raw.githubusercontent.com/edwinm/rxjslog/master/example/example-output.png)
+![Example output of rxjslog](https://raw.githubusercontent.com/edwinm/rxjslog/master/example/example-output.png)
 
 ## Configuration
 
@@ -48,4 +52,4 @@ logConfig({ error: { icon: "❗", color: "red" } });
 
 ## License
 
-RxJSLog is written by Edwin Martin and is published under the MIT license.
+Rxjslog is written by Edwin Martin and is published under the MIT license.
