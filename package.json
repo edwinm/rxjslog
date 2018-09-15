@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "build": "webpack",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "watch": "webpack --watch",
+        "test": "node test/test.bundle.js"
     },
     "keywords": [
         "rx",
@@ -14,9 +15,13 @@
         "console",
         "log"
     ],
-    "author": "Edwin Martin",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/edwinm/rxjslog.git"
+    },
+    "author": "Edwin Martin <edwin@bitstorm.org>",
     "license": "MIT",
-    "dependencies": {
+    "devDependencies": {
         "rxjs": "^6.3.2",
         "webpack": "^4.19.0",
         "webpack-cli": "^3.1.0"
