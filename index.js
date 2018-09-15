@@ -1,6 +1,6 @@
 import {tap} from 'rxjs/operators';
 
-const config = {
+let config = {
   next: {
     icon: "➡️",
     color: "blue",
@@ -14,6 +14,8 @@ const config = {
     color: "blue",
   },
 };
+
+
 
 const consoleColors = {
   black: "\x1b[30m",
@@ -36,6 +38,10 @@ export function log(message) {
   )
 }
 
+export function logConfig(newConfig) {
+  config = Object.assign(config, newConfig);
+}
+
 function consoleLog(type, message, data) {
   if (isNode) {
     const color = consoleColors[config[type].color] || "";
@@ -46,9 +52,9 @@ function consoleLog(type, message, data) {
     }
   } else {
     if (type != "complete") {
-      console.log(`${config[type].icon}️ %c${message}`, `color: ${config[type].color}`, data);
+      console.log(`${config[type].icon} %c${message}`, `color: ${config[type].color}`, data);
     } else {
-      console.log(`${config[type].icon}️ %c${message}`, `color: ${config[type].color}`);
+      console.log(`${config[type].icon} %c${message}`, `color: ${config[type].color}`);
     }
   }
 }
