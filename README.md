@@ -14,14 +14,20 @@ npm install rxjslog
 ## Example code
 
 ```javascript
+import {interval} from 'rxjs';
+import {take} from 'rxjs/operators';
+
 import {log} from "rxjslog";
 
-const obsComplete = interval(500).pipe(take(3));
+const myObservable = interval(500).pipe(take(3));
 
-obsComplete.pipe(log("obsComplete"));
-
-obsComplete.subscribe();
+myObservable.pipe(log("myObservable"))
+    .subscribe();
 ```
+
+## Example output
+
+![Example output of RxJSLog](https://raw.githubusercontent.com/edwinm/rxjslog/master/example/example-output.png)
 
 ## Configuration
 
