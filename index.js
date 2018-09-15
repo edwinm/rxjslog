@@ -3,16 +3,27 @@ import {tap} from 'rxjs/operators';
 const config = {
   next: {
     icon: "➡️",
-    color: "purple",
+    color: "blue",
   },
   error: {
     icon: "❌",
-    color: "purple",
+    color: "blue",
   },
   complete: {
     icon: "✅",
-    color: "purple",
+    color: "blue",
   },
+};
+
+const consoleColors = {
+  black: "\x1b[30m",
+  red: "\x1b[31m",
+  green: "\x1b[32m",
+  yellow: "\x1b[33m",
+  blue: "\x1b[34m",
+  magenta: "\x1b[35m",
+  cyan: "\x1b[36m",
+  white: "\x1b[37m"
 };
 
 const isNode = detectNode();
@@ -27,10 +38,11 @@ export function log(message) {
 
 function consoleLog(type, message, data) {
   if (isNode) {
+    const color = consoleColors[config[type].color] || "";
     if (type != "complete") {
-      console.log(`${config[type].icon}️  ${message}`, data);
+      console.log(`${config[type].icon}️ ${color} ${message}`, data);
     } else {
-      console.log(`${config[type].icon}️  ${message}`);
+      console.log(`${config[type].icon}️ ${color} ${message}`);
     }
   } else {
     if (type != "complete") {
