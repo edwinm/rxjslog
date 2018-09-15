@@ -1,5 +1,5 @@
 {
-    "name": "rxlog",
+    "name": "rxjslog",
     "version": "1.0.0",
     "description": "Log RxJS events nicely to the console",
     "main": "index.js",
