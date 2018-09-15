@@ -1,0 +1,24 @@
+{
+    "name": "rxlog",
+    "version": "1.0.0",
+    "description": "Log RxJS events nicely to the console",
+    "main": "index.js",
+    "scripts": {
+        "build": "webpack",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "rx",
+        "rxjs",
+        "tap",
+        "console",
+        "log"
+    ],
+    "author": "Edwin Martin",
+    "license": "MIT",
+    "dependencies": {
+        "rxjs": "^6.3.2",
+        "webpack": "^4.19.0",
+        "webpack-cli": "^3.1.0"
+    }
+}
