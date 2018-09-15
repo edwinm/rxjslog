@@ -15,8 +15,6 @@ let config = {
   },
 };
 
-
-
 const consoleColors = {
   black: "\x1b[30m",
   red: "\x1b[31m",
@@ -43,20 +41,20 @@ export function logConfig(newConfig) {
 }
 
 function consoleLog(type, message, data) {
+  let args;
+
   if (isNode) {
     const color = consoleColors[config[type].color] || "";
-    if (type != "complete") {
-      console.log(`${config[type].icon}️ ${color} ${message}`, data);
-    } else {
-      console.log(`${config[type].icon}️ ${color} ${message}`);
-    }
+    args = [`${config[type].icon} ${color} ${message}`];
   } else {
-    if (type != "complete") {
-      console.log(`${config[type].icon} %c${message}`, `color: ${config[type].color}`, data);
-    } else {
-      console.log(`${config[type].icon} %c${message}`, `color: ${config[type].color}`);
-    }
+    args = [`${config[type].icon} %c${message}`, `color: ${config[type].color}`]
   }
+
+  if (type != "complete") {
+    args.push(data);
+  }
+
+  console.log(...args);
 }
 
 function detectNode() {
