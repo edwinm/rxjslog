@@ -2,7 +2,7 @@ import {tap} from 'rxjs/operators';
 
 let config = {
   next: {
-    icon: "➡️",
+    icon: "🔵",
     color: "blue",
   },
   error: {
@@ -15,7 +15,7 @@ let config = {
   },
 };
 
-const consoleColors = {
+const ansiColors = {
   black: "\x1b[30m",
   red: "\x1b[31m",
   green: "\x1b[32m",
@@ -44,8 +44,8 @@ function consoleLog(type, message, data) {
   let args;
 
   if (isNode) {
-    const color = consoleColors[config[type].color] || "";
-    args = [`${config[type].icon} ${color} ${message}`];
+    const color = ansiColors[config[type].color] || "";
+    args = [`${config[type].icon} ${color}${message}`];
   } else {
     args = [`${config[type].icon} %c${message}`, `color: ${config[type].color}`]
   }
