@@ -23,8 +23,8 @@
     "author": "Edwin Martin <edwin@bitstorm.org>",
     "license": "MIT",
     "devDependencies": {
-        "rxjs": "^6.3.2",
-        "webpack": "^4.19.0",
-        "webpack-cli": "^3.1.0"
+        "rxjs": "^6.6.0",
+        "webpack": "^4.43.0",
+        "webpack-cli": "^3.3.12"
     }
 }
